@@ -2,45 +2,65 @@
 defineOptions({
   name: 'IndexPage',
 })
-
-const name = ref('')
-
-const router = useRouter()
-function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
 </script>
 
 <template>
-  <div>
-    <div i-carbon-campsite inline-block text-4xl />
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu-collective/vitesse-lite" target="_blank">
-        Vitesse Lite
-      </a>
-    </p>
-    <p>
-      <em text-sm op75>Opinionated Vite Starter Template</em>
-    </p>
-
-    <div py-4 />
-
-    <TheInput
-      v-model="name"
-      placeholder="What's your name?"
-      autocomplete="false"
-      @keydown.enter="go"
-    />
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        Go
-      </button>
+  <div class="m-auto container">
+    <div class="p-5">
+      <div class="flex items-center justify-between">
+        <div class="i-mdi-chevron-left text-2xl" />
+        <div class="m-auto">
+          <h1 class="font-bold">
+            Цифровые документы
+          </h1>
+        </div>
+      </div>
+      <div class="text-left">
+        <h1 class="text-xl font-bold">
+          Мои документы
+        </h1>
+        <ul>
+          <li>
+            <div class="border rounded-2xl bg-blueGray p-1">
+              <div class="i-mdi:id-card" />
+            </div><RouterLink to="/404">
+              Удостоверение личности
+            </RouterLink>
+          </li>
+          <li>
+            <div class="border rounded-2xl bg-blueGray p-1">
+              <div class="i-mdi:id-card" />
+            </div><RouterLink to="/404">
+              Удостоверение личности
+            </RouterLink>
+          </li>
+          <li>
+            <div class="border rounded-2xl bg-coolGray p-1">
+              <div class="i-mdi:id-card" />
+            </div><RouterLink to="/404">
+              Удостоверение личности
+            </RouterLink>
+          </li>
+          <li :to>
+            <div class="border rounded-2xl bg-blueGray p-1">
+              <div class="i-mdi:id-card" />
+            </div><RouterLink to="/404">
+              Удостоверение личности
+            </RouterLink>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+ul > li {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+ul > li > div {
+  margin-right: 10px;
+}
+</style>
