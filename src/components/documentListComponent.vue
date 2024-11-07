@@ -18,7 +18,7 @@ const documentList = [{
   id: 4,
   name: 'Водительское удостоверение',
   icon: 'i-mdi:car-side',
-  route: '/document/driverlicense',
+  route: '/document/driverlice',
 }]
 </script>
 
@@ -28,7 +28,7 @@ const documentList = [{
       <RouterLink :to="item.route">
         <div class="flex items-center">
           <div class="li__block">
-            <div :class="item.icon" class="border border-coolGray rounded" />
+            <div class="border border-coolGray rounded" :class="[item.icon]" />
           </div>
           <div>
             <h1 class="font-sm ml-4 text-lg">
