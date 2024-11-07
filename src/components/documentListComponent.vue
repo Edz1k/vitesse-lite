@@ -18,7 +18,7 @@ const documentList = [{
   id: 4,
   name: 'Водительское удостоверение',
   icon: 'i-mdi:car-side',
-  route: '/document/driverlice',
+  route: '/document/driverlc',
 }]
 </script>
 
