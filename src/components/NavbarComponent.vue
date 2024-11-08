@@ -6,9 +6,9 @@ const router = useRouter()
 <template>
   <div>
     <div class="flex items-center justify-between">
-      <div class="i-mdi-chevron-left text-4xl" @click="router.push('/')" />
+      <div class="i-mdi-chevron-left text-4xl" @click="router.back()" />
       <div class="m-auto">
-        <h1 v-if="route.path === '/document/id' || route.path === '/document/board/detailShowcase'" class="text-lg font-bold">
+        <h1 v-if="route.path === '/document/id'" class="text-lg font-bold">
           Удостоверение личности
         </h1>
         <h1 v-if="route.path === '/'" class="text-lg font-bold">
