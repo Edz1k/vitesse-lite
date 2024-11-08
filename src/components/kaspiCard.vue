@@ -33,7 +33,7 @@ function handleInput() {
         >
       </div>
       <div v-if="photo">
-        <img :src="photo" alt="">
+        <img :src="photo" class="w-full" alt="">
       </div>
     </div>
     <div v-if="props.modelValue === 'Реквизиты'">
