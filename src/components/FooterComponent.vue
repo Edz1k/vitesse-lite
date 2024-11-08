@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="border-t p-4">
+  <div class="position-fixed bottom-0 left-0 w-full border-t p-4">
     <div>
       <div class="flex items-center justify-center rounded bg-blue p-2">
         <div class="i-mdi-qrcode-scan" mr-2 />

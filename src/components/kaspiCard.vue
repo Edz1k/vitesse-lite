@@ -1,21 +1,44 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const props = defineProps<{
   modelValue: string
 }>()
+
+const fileInput = ref()
+const photo = ref(localStorage.getItem('photo'))
+function handleInput() {
+  const reader = new FileReader()
+  reader.readAsDataURL(fileInput.value.files?.[0])
+  reader.onload = () => {
+    const result = reader.result as string
+    photo.value = result
+    useStorage('photo', result)
+  }
+}
 </script>
 
 <template>
-  <div v-if="props.modelValue === 'Документы'" class="tabsview">
-    <h1>Документы</h1>
+  <div class="flex flex-col">
+    <div v-if="props.modelValue === 'Документы'">
+      <div v-if="!photo">
+        <label for="file-upload" class="border border-coolGray rounded-lg p-3">Загрузите фотографию</label>
+        <input
+          id="file-upload"
+          ref="fileInput"
+          type="file"
+          accept="image/png, image/jpeg"
+          class="hidden"
+          @change="handleInput"
+        >
+      </div>
+      <div v-if="photo">
+        <img :src="photo" alt="">
+      </div>
+    </div>
+    <div v-if="props.modelValue === 'Реквизиты'">
+      <h1>Реквизиты</h1>
+    </div>
+    <FooterComponent v-if="props.modelValue === 'Документы'" />
   </div>
-  <div v-if="props.modelValue === 'Реквизиты'">
-    <h1>Реквизиты</h1>
-  </div>
-  <FooterComponent />
 </template>
-
-<style scoped>
-.tabsview {
-  height: 65vh;
-}
-</style>
