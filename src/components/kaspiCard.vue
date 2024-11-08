@@ -37,7 +37,7 @@ function handleInput() {
       </div>
     </div>
     <div v-if="props.modelValue === 'Реквизиты'">
-      <h1>Реквизиты</h1>
+      <DetailsComponent />
     </div>
     <FooterComponent v-if="props.modelValue === 'Документы'" />
   </div>
