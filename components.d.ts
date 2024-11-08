@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     DocumentListComponent: typeof import('./src/components/documentListComponent.vue')['default']
+    FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     KaspiCard: typeof import('./src/components/kaspiCard.vue')['default']
     MiniNavbarComponent: typeof import('./src/components/MiniNavbarComponent.vue')['default']
     'MiniNavbarComponent.vue': typeof import('./src/components/MiniNavbarComponent.vue')['default']
