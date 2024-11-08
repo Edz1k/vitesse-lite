@@ -7,6 +7,8 @@ const props = defineProps<{
 
 const fileInput = ref()
 const photo = ref(localStorage.getItem('photo'))
+// not reactive
+// const photo = useStorage('photo', null)
 function handleInput() {
   const reader = new FileReader()
   reader.readAsDataURL(fileInput.value.files?.[0])
