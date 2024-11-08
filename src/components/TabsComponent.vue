@@ -3,17 +3,18 @@ const modelValue = ref('Документы')
 </script>
 
 <template>
-  <div>
-    <ul class="flex bg-red">
+  <div class="p-4">
+    <ul class="border- flex border-2 border-light-9 rounded-lg bg-light-9 text-lg">
       <li
-        :class="{ 'bg-amber-500': modelValue === 'Документы' }"
+        class="rounded-lg"
+        :class="{ 'bg-white': modelValue === 'Документы' }"
         @click="modelValue = 'Документы'"
       >
         Документы
       </li>
       <li
-
-        :class="{ 'bg-amber-500': modelValue === 'Реквизиты' }"
+        class="rounded-lg"
+        :class="{ 'bg-white': modelValue === 'Реквизиты' }"
         @click="modelValue = 'Реквизиты'"
       >
         Рекизиты
