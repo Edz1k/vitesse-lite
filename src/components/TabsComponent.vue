@@ -1,31 +1,31 @@
 <script setup lang="ts">
-const modelValue = ref('Документы')
+import { ETab } from '~/types/enums'
+
+const activeTab = ref<ETab>(ETab.Documents)
+
+function changeTab(tab: ETab) {
+  activeTab.value = tab
+}
 </script>
 
 <template>
   <div class="p-4">
-    <ul class="border- flex border-2 border-light-9 rounded-lg bg-light-9 text-lg">
+    <ul class="flex border border-2 border-light-9 rounded-lg bg-light-9 text-lg">
       <li
-        class="rounded-lg"
-        :class="{ 'bg-white': modelValue === 'Документы' }"
-        @click="modelValue = 'Документы'"
+        class="w-1/2 rounded-lg"
+        :class="{ 'bg-white': activeTab === ETab.Documents }"
+        @click="changeTab(ETab.Documents)"
       >
         Документы
       </li>
       <li
-        class="rounded-lg"
-        :class="{ 'bg-white': modelValue === 'Реквизиты' }"
-        @click="modelValue = 'Реквизиты'"
+        class="w-1/2 rounded-lg"
+        :class="{ 'bg-white': activeTab === ETab.Requirements }"
+        @click="changeTab(ETab.Requirements)"
       >
         Рекизиты
       </li>
     </ul>
   </div>
-  <KaspiCard :model-value="modelValue" />
+  <KaspiCard :model-value="activeTab" />
 </template>
-
-<style scoped>
-ul > li {
-  width: 50%;
-}
-</style>
