@@ -35,12 +35,12 @@ function handleInput() {
         >
       </div>
       <div v-if="photo">
-        <img :src="photo" class="m-auto h-[67vh]" alt="">
+        <img :src="photo" class="m-auto h-[400px] w-full transform" alt="">
       </div>
     </div>
     <div v-if="props.modelValue === 'Реквизиты'">
       <DetailsComponent />
     </div>
-    <FooterComponent v-if="props.modelValue === 'Документы'" />
   </div>
+  <FooterComponent v-if="props.modelValue === 'Документы'" />
 </template>
