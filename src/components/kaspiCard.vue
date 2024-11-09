@@ -21,7 +21,7 @@ function handleInput() {
 </script>
 
 <template>
-  <div class="min-h-height flex flex-col">
+  <div class="flex flex-col">
     <div v-if="props.modelValue === 'Документы'">
       <div v-if="!photo">
         <label for="file-upload" class="border border-coolGray rounded-lg p-3">Загрузите фотографию</label>
@@ -35,7 +35,7 @@ function handleInput() {
         >
       </div>
       <div v-if="photo">
-        <img :src="photo" class="" alt="">
+        <img :src="photo" class="m-auto h-[65vh]" alt="">
       </div>
     </div>
     <div v-if="props.modelValue === 'Реквизиты'">
