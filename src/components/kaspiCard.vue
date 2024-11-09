@@ -35,7 +35,7 @@ function handleInput() {
         >
       </div>
       <div v-if="photo">
-        <img :src="photo" class="m-auto h-[65vh]" alt="">
+        <img :src="photo" class="m-auto h-[67vh]" alt="">
       </div>
     </div>
     <div v-if="props.modelValue === 'Реквизиты'">
