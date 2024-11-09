@@ -10,16 +10,18 @@ function changeTab(tab: ETab) {
 
 <template>
   <div class="p-4">
-    <ul class="flex border border-2 border-light-9 rounded-lg bg-light-9 text-lg">
+    <ul
+      class="flex border border-2 border-light-9 rounded-lg bg-light-9 text-lg"
+    >
       <li
-        class="w-1/2 rounded-lg"
+        class="w-1/2 rounded-lg p-[2px]"
         :class="{ 'bg-white': activeTab === ETab.Documents }"
         @click="changeTab(ETab.Documents)"
       >
         Документы
       </li>
       <li
-        class="w-1/2 rounded-lg"
+        class="w-1/2 rounded-lg p-[2px]"
         :class="{ 'bg-white': activeTab === ETab.Requirements }"
         @click="changeTab(ETab.Requirements)"
       >

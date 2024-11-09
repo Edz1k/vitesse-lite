@@ -29,7 +29,6 @@ export default defineConfig({
         }),
       },
     }),
-
     // https://github.com/posva/unplugin-vue-router
     VueRouter(),
 
@@ -45,9 +44,7 @@ export default defineConfig({
         },
       ],
       dts: true,
-      dirs: [
-        './src/composables',
-      ],
+      dirs: ['./src/composables'],
       vueTemplate: true,
     }),
 
