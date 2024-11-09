@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="sticky bottom-0 border-t bg-white p-4 text-lg">
+  <div class="fixed bottom-0 w-full border-t bg-white p-4 text-lg">
     <div>
       <div
         class="flex items-center justify-center rounded-xl bg-blue p-4 text-white"
