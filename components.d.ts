@@ -13,6 +13,8 @@ declare module 'vue' {
     KaspiCard: typeof import('./src/components/kaspiCard.vue')['default']
     MiniNavbarComponent: typeof import('./src/components/MiniNavbarComponent.vue')['default']
     'MiniNavbarComponent.vue': typeof import('./src/components/MiniNavbarComponent.vue')['default']
+    Modal: typeof import('./src/components/Modal.vue')['default']
+    ModalComponent: typeof import('./src/components/ModalComponent.vue')['default']
     NavbarComponent: typeof import('./src/components/NavbarComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
