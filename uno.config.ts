@@ -22,7 +22,7 @@ export default defineConfig({
   theme: {
     colors: {
       kaspiGrey: '#f7f6f7',
-      kaspiBlue: '#3C89F7',
+      kaspiBlue: '#1f77f6',
       kaspiText: '#837f7e',
     },
   },
