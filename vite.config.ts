@@ -9,6 +9,7 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   resolve: {
@@ -17,6 +18,29 @@ export default defineConfig({
     },
   },
   plugins: [
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'Kaspi.kz',
+        short_name: 'Kaspi.kz',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/public/assets/favicon/web-app-manifest-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/public/assets/favicon/web-app-manifest-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
     VueMacros({
       defineOptions: false,
       defineModels: false,
