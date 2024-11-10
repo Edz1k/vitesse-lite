@@ -33,7 +33,10 @@ const documentList = [
       <RouterLink :to="item.route">
         <div class="flex items-center">
           <div class="li__block">
-            <div class="border border-coolGray rounded" :class="[item.icon]" />
+            <div
+              class="border border-coolGray rounded text-kaspiText"
+              :class="[item.icon]"
+            />
           </div>
           <div>
             <h1 class="font-sm ml-4 text-lg">
