@@ -9,17 +9,19 @@ function changeTab(tab: ETab) {
 </script>
 
 <template>
-  <div class="p-4">
-    <ul class="flex border border-2 border-light-9 rounded-lg bg-light-9 text-lg">
+  <div class="kaspiGrey p-4">
+    <ul
+      class="font-lg flex border border-2 border-kaspiGrey rounded-lg bg-kaspiGrey text-[15px]"
+    >
       <li
-        class="w-1/2 rounded-lg"
+        class="w-1/2 rounded-lg p-[4px]"
         :class="{ 'bg-white': activeTab === ETab.Documents }"
         @click="changeTab(ETab.Documents)"
       >
         Документы
       </li>
       <li
-        class="w-1/2 rounded-lg"
+        class="w-1/2 rounded-lg p-[4px]"
         :class="{ 'bg-white': activeTab === ETab.Requirements }"
         @click="changeTab(ETab.Requirements)"
       >
