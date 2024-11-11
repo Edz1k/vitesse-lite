@@ -21,9 +21,10 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      kaspiGrey: '#f7f6f7',
-      kaspiBlue: '#1f77f6',
-      kaspiText: '#837f7e',
+      kaspiGrey: '#fafafa',
+      kaspiGreyTabs: '#E7E7E7',
+      kaspiBlue: '#0b63e2',
+      kaspiText: '#757575',
       kaspiRed: '#DF543F',
     },
   },

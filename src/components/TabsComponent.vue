@@ -11,7 +11,7 @@ function changeTab(tab: ETab) {
 <template>
   <div class="kaspiGrey p-4 pb-0">
     <ul
-      class="font-lg flex border border-2 border-kaspiGrey rounded-lg bg-kaspiGrey text-[15px]"
+      class="flex border border-2 border-kaspiGreyTabs rounded-lg bg-kaspiGreyTabs text-[15px] font-500"
     >
       <li
         class="w-1/2 rounded-lg p-[4px]"
