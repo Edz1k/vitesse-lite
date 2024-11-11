@@ -8,7 +8,7 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    ['detailsBlock', 'flex flex-col text-left mt-3'],
+    ['detailsBlock', 'flex flex-col text-left mt-5'],
     ['li__block', 'border border-kaspiGrey rounded-2xl bg-kaspiGrey p-1'],
     [
       'btn',
@@ -36,7 +36,12 @@ export default defineConfig({
     }),
     presetWebFonts({
       fonts: {
-        sans: 'Roboto',
+        sans: [
+          {
+            name: 'Roboto Sans',
+            weights: ['400', '500', '600', '700', '800', '900'],
+          },
+        ],
         serif: 'Roboto Serif',
         mono: 'Roboto Mono',
       },

@@ -9,7 +9,7 @@ function changeTab(tab: ETab) {
 </script>
 
 <template>
-  <div class="kaspiGrey p-4">
+  <div class="kaspiGrey p-4 pb-0">
     <ul
       class="font-lg flex border border-2 border-kaspiGrey rounded-lg bg-kaspiGrey text-[15px]"
     >

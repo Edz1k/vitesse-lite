@@ -11,7 +11,7 @@ useStorage('details', details)
 </script>
 
 <template>
-  <div class="p-5">
+  <div class="p-5 pt-0 text-[17px] text-black">
     <div class="detailsBlock">
       <h1>ФИО</h1>
       <input
@@ -36,7 +36,7 @@ useStorage('details', details)
         v-model="details.date"
         type="text"
         class="outline-none"
-        :placeholder="details.date ? '' : 'Введите Дату рождения'"
+        :placeholder="details.date ? '' : 'Введите дату рождения'"
       >
     </div>
     <div class="detailsBlock">
