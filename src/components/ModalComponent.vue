@@ -15,10 +15,11 @@ function changeModel() {
     @click="changeModel"
   >
     <div
-      class="fixed bottom-0 left-0 right-0 z-10 w-full rounded-t-xl bg-white p-4 pb-15"
+      class="fixed bottom-0 left-0 right-0 z-10 w-full rounded-t-xl bg-white p-4 pb-15 pt-2"
       @click="(event) => event.stopPropagation()"
     >
-      <div class="flex items-center justify-between">
+      <div class="m-auto h-[4px] w-[8%] rounded-2xl bg-coolGray" />
+      <div class="mt-3 flex items-center justify-between">
         <h1 class="text-lg font-semibold">
           Удостоверение личности
         </h1>
@@ -31,7 +32,7 @@ function changeModel() {
         </div>
         <div class="mt-3">
           <p>или скажите код</p>
-          <span class="text-2xl font-bold">{{ props.number }}</span>
+          <span class="text-2xl text-black font-600">{{ props.number }}</span>
         </div>
       </div>
     </div>
