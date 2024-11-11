@@ -2,6 +2,14 @@
 const hold = defineModel()
 let holdTimeout: NodeJS.Timeout | null = null
 
+const loading = ref(false)
+function changeModel() {
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+  }, 1000)
+}
+
 function handleTouchStart() {
   holdTimeout = setTimeout(() => {
     hold.value = true
@@ -18,15 +26,24 @@ function handleTouchEnd() {
 
 <template>
   <div
-    class="rounded p-2 text-sm outline-blue outline"
+    class="rounded text-sm outline-blue outline"
     @touchstart="handleTouchStart"
     @touchend="handleTouchEnd"
   >
-    <button class="w-full select-none rounded text-blue">
-      Обновить список документов
-    </button>
-  </div>
-  <div v-if="hold">
-    dasdada
+    <div
+      class="flex justify-center p-2 text-size-[13px] text-blue"
+      @click="changeModel"
+    >
+      <div
+        v-if="loading"
+        class="i-mdi-loading animate-spin animate-duration-500 text-size-[16.5px]"
+      />
+      <button v-if="!loading">
+        Обновить список документов
+      </button>
+    </div>
+    <div v-if="hold">
+      dasdada
+    </div>
   </div>
 </template>

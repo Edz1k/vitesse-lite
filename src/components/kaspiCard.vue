@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ETab } from '~/types/enums'
 
-const props = defineProps<{
-  modelValue: string
-}>()
+const props = defineProps({
+  modelValue: {
+    type: [String, Number],
+    required: true,
+  },
+})
 
 const fileInput = ref()
 const photo = ref(localStorage.getItem('photo'))
@@ -22,7 +25,7 @@ function handleInput() {
 
 <template>
   <div class="flex flex-col">
-    <div v-if="props.modelValue === 'Документы'">
+    <div v-if="props.modelValue === ETab.Documents">
       <div v-if="!photo">
         <label for="file-upload" class="border border-coolGray rounded-lg p-3">Загрузите фотографию</label>
         <input
@@ -38,9 +41,9 @@ function handleInput() {
         <img :src="photo" class="m-auto h-[70svh] w-full transform" alt="">
       </div>
     </div>
-    <div v-if="props.modelValue === 'Реквизиты'">
+    <div v-if="props.modelValue === ETab.Requirements">
       <DetailsComponent />
     </div>
   </div>
-  <FooterComponent v-if="props.modelValue === 'Документы'" class="mb-5" />
+  <FooterComponent v-if="props.modelValue === ETab.Documents" class="mb-5" />
 </template>

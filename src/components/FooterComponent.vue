@@ -46,7 +46,9 @@ function changeModel() {
       <div
         class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
-        <div class="animationFast i-mdi-loading text-3xl text-kaspiRed" />
+        <div
+          class="i-mdi-loading animate-spin animate-duration-500 text-3xl text-kaspiRed"
+        />
       </div>
     </div>
     <div v-else>
@@ -54,17 +56,3 @@ function changeModel() {
     </div>
   </div>
 </template>
-
-<style>
-.animationFast {
-  animation: animationFast 500ms linear infinite;
-}
-@keyframes animationFast {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-</style>
