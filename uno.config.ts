@@ -24,6 +24,7 @@ export default defineConfig({
       kaspiGrey: '#f7f6f7',
       kaspiBlue: '#1f77f6',
       kaspiText: '#837f7e',
+      kaspiRed: '#DF543F',
     },
   },
   presets: [

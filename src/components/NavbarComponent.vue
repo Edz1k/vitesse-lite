@@ -13,9 +13,9 @@ const lst: Record<string, string> = {
 
 <template>
   <div>
-    <div class="flex items-center justify-between">
+    <div class="relative flex items-center justify-between">
       <div class="i-mdi-chevron-left text-4xl" @click="router.back()" />
-      <div class="m-auto">
+      <div class="absolute left-1/2 w-[70%] transform -translate-x-1/2">
         <h1 class="text-lg font-bold">
           {{ lst[route.path] }}
         </h1>
