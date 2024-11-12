@@ -6,9 +6,9 @@ const loading = ref(false)
 
 function changeModel() {
   loading.value = true
+  hold.value = !hold.value
   setTimeout(() => {
     loading.value = false
-    hold.value = !hold.value
   }, 1000)
 }
 
