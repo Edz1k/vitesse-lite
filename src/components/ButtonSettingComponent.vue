@@ -3,8 +3,10 @@ const hold = defineModel()
 let holdTimeout: NodeJS.Timeout | null = null
 
 const loading = ref(false)
+
 function changeModel() {
   loading.value = true
+  hold.value = !hold.value
   setTimeout(() => {
     loading.value = false
   }, 1000)
@@ -38,12 +40,9 @@ function handleTouchEnd() {
         v-if="loading"
         class="i-mdi-loading animate-spin animate-duration-500 text-size-[16.5px]"
       />
-      <button v-if="!loading">
+      <button v-if="!loading" @click="changeModel">
         Обновить список документов
       </button>
-    </div>
-    <div v-if="hold">
-      dasdada
     </div>
   </div>
 </template>

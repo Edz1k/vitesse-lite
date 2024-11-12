@@ -28,6 +28,12 @@ export default defineConfig({
       kaspiRed: '#DF543F',
     },
   },
+  safelist: [
+    'i-mdi:id-card',
+    'i-mdi:account-credit-card-outline',
+    'i-mdi:passport',
+    'i-mdi:car-side',
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
