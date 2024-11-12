@@ -42,14 +42,10 @@ function handleInput() {
             @change="handleInput"
           >
         </div>
-        <div v-if="photo" class="mt-6 p-3">
-          <img
-            :src="photo"
-            class="m-auto h-[55svh] scale-100 transform"
-            alt=""
-          >
+        <div v-if="photo" class="h-[65svh]">
+          <img :src="photo" class="m-auto scale-90 transform" alt="">
         </div>
-        <div class="fixed bottom-0 w-full pb-15">
+        <div class="">
           <FooterComponent />
         </div>
       </div>
