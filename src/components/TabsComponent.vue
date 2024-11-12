@@ -18,7 +18,7 @@ function changeTab(tab: ETab) {
         :class="{ 'bg-white': activeTab === ETab.Documents }"
         @click="changeTab(ETab.Documents)"
       >
-        Документы
+        Документ
       </li>
       <li
         class="w-1/2 rounded-lg p-[4px]"
