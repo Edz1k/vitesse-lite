@@ -18,7 +18,7 @@ function changeModel() {
 </script>
 
 <template>
-  <div class="sticky bottom-5 border-t bg-white p-5 text-lg">
+  <div class="border-t bg-white p-5 text-lg">
     <div>
       <div
         class="flex items-center justify-center rounded-xl bg-kaspiBlue p-4 text-white"
