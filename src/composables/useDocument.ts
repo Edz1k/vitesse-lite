@@ -1,12 +1,11 @@
-import { ref } from 'vue'
-
-const documentList = ref([
+const documentList = useStorage('documentList', [
   {
     id: 1,
     name: 'Удостоверение личности',
     icon: 'i-mdi:id-card',
     route: '/document/id',
     visible: true,
+    description: '',
   },
   {
     id: 2,
@@ -14,13 +13,15 @@ const documentList = ref([
     icon: 'i-mdi:account-credit-card-outline',
     route: '/document/studentid',
     visible: true,
+    description: '',
   },
   {
     id: 3,
-    name: 'Паспорт',
+    name: 'Паспорт гражданина РК',
     icon: 'i-mdi:passport',
     route: '/document/passport',
     visible: true,
+    description: '',
   },
   {
     id: 4,
@@ -28,24 +29,22 @@ const documentList = ref([
     icon: 'i-mdi:car-side',
     route: '/document/driverlc',
     visible: true,
+    description: '',
+  },
+  {
+    id: 5,
+    name: 'Справки',
+    icon: 'i-mdi:car-side',
+    route: '/document/driverlc',
+    visible: true,
+    description: 'Социальные, по недвижимости и медицинские',
   },
 ])
 
 const documentListRemake = computed(() => {
-  if (documentList.value) {
-    return {
-      ...documentList.value,
-      visible: documentList.value.filter(doc => doc.visible),
-    }
-  }
-  return null
+  return documentList.value.filter(doc => doc.visible)
 })
 
 export function useDocument() {
-  const editDocument = (id: number, visible: boolean) => {
-    const index = documentList.value.findIndex(doc => doc.id === id)
-    documentList.value[index].visible = visible
-  }
-
-  return { editDocument, documentListRemake, documentList }
+  return { documentListRemake, documentList }
 }

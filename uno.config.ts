@@ -9,7 +9,7 @@ import {
 export default defineConfig({
   shortcuts: [
     ['detailsBlock', 'flex flex-col text-left mt-5'],
-    ['li__block', 'border border-kaspiGrey rounded-2xl bg-kaspiGrey p-1'],
+    ['li__block', 'border border-kaspiGrey rounded-2xl bg-kaspiGrey p-1 '],
     [
       'btn',
       'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50',

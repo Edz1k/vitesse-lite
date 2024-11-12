@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const hold = defineModel()
 let holdTimeout: NodeJS.Timeout | null = null
-
 const loading = ref(false)
 
 function changeModel() {
   loading.value = true
-  hold.value = !hold.value
+  hold.value = false
   setTimeout(() => {
     loading.value = false
   }, 1000)

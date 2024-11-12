@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const hold = ref(false)
 const { documentListRemake, documentList } = useDocument()
-useStorage('documentList', documentList)
 </script>
 
 <template>
@@ -15,11 +14,15 @@ useStorage('documentList', documentList)
               :class="[item.icon]"
             />
           </div>
-          <div>
-            <h1 class="font-sm ml-4 text-lg">
+          <div class="ml-4 flex flex-col">
+            <h1 class="text-lg font-500">
               {{ item.name }}
             </h1>
+            <p v-if="item.description" class="text-sm">
+              {{ item.description }}
+            </p>
           </div>
+          <div class="i-mdi:chevron-right ml-auto text-kaspiText" />
         </div>
       </RouterLink>
     </div>
