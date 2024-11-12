@@ -1,16 +1,7 @@
 <script setup lang="ts">
 const isShow = ref(false)
 const loading = ref(false)
-function shareDocument() {
-  if (navigator.share) {
-    navigator
-      .share({
-        title: 'Удостоверение личности',
-        url: window.location.href,
-      })
-      .catch(error => console.error('Ошибка при отправке документа', error))
-  }
-}
+const { shareDocument } = useDocument()
 function randomCode(): number {
   return Math.floor(Math.random() * 1000000)
 }

@@ -46,5 +46,18 @@ const documentListRemake = computed(() => {
 })
 
 export function useDocument() {
-  return { documentListRemake, documentList }
+  const shareDocument = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: 'Удостоверение личности',
+          url: window.location.href,
+        })
+        .catch(error =>
+          console.error('Ошибка при отправке документа', error),
+        )
+    }
+  }
+
+  return { documentListRemake, documentList, shareDocument }
 }
