@@ -1,10 +1,13 @@
 <script setup lang="ts">
 const isShow = ref(false)
 const loading = ref(false)
+
 const { shareDocument } = useDocument()
+
 function randomCode(): number {
   return Math.floor(Math.random() * 1000000)
 }
+
 function changeModel() {
   loading.value = true
   setTimeout(() => {
@@ -42,8 +45,7 @@ function changeModel() {
         />
       </div>
     </div>
-    <div v-else>
-      <ModalComponent v-model="isShow" :number="randomCode()" />
-    </div>
+    <!-- minimum code -->
+    <ModalComponent v-model="isShow" :number="randomCode()" />
   </div>
 </template>

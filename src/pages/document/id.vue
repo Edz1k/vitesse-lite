@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <TabsComponent :names="['Документ', 'Рекизиты']" />
+    <TabsComponent />
   </div>
 </template>
 

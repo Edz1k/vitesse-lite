@@ -26,7 +26,7 @@ function handleInput() {
 <template>
   <div class="flex flex-col">
     <div v-if="props.modelValue === ETab.Documents">
-      <div v-if="!photo">
+      <div v-if="!photo" class="h-[70svh] flex items-center justify-center">
         <label for="file-upload" class="border border-coolGray rounded-lg p-3">Загрузите фотографию</label>
         <input
           id="file-upload"
