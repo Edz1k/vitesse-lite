@@ -56,7 +56,7 @@ useStorage('details', details)
         <input
           v-model="details.documentNumber"
           type="text"
-          class="outline-none"
+          class="w-[90%] outline-none"
           :placeholder="details.documentNumber ? '' : 'Введите номер документа'"
         >
         <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
