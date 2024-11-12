@@ -14,8 +14,5 @@ defineOptions({
         <DocumentListComponent />
       </div>
     </div>
-    <div class="p-5">
-      <ButtonSettingComponent />
-    </div>
   </div>
 </template>
