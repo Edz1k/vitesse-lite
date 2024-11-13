@@ -21,7 +21,7 @@ function handleSelect(pos: number) {
 </script>
 
 <template>
-  <div class="kaspiGrey p-4 pb-0">
+  <div class="kaspiGrey px-4 pb-2 pt-4">
     <ul
       class="relative flex border border-2 border-kaspiGreyTabs rounded-lg bg-kaspiGreyTabs text-[15px] font-500"
     >

@@ -27,8 +27,8 @@ function handleInput() {
         @change="handleInput"
       >
     </div>
-    <div v-if="photo" class="h-[65svh]">
-      <img :src="photo" class="m-auto scale-90 transform" alt="">
+    <div v-if="photo" class="h-[65svh] flex touch-auto items-start overflow-auto">
+      <img :src="photo" class="scale-90 transform -mt-5" alt="">
     </div>
   </div>
 </template>
