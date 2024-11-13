@@ -14,10 +14,10 @@ declare module 'vue' {
     FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     KaspiCard: typeof import('./src/components/kaspiCard.vue')['default']
     ModalComponent: typeof import('./src/components/ModalComponent.vue')['default']
-    NavbarComponent: typeof import('./src/components/NavbarComponent.vue')['default']
+    NavbarComponent: typeof import('./src/components/Navbar/NavbarComponent.vue')['default']
     RedactComponent: typeof import('./src/components/DocumentComponents/RedactComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TabsComponent: typeof import('./src/components/TabsComponent.vue')['default']
+    TabsComponent: typeof import('./src/components/Navbar/TabsComponent.vue')['default']
   }
 }
