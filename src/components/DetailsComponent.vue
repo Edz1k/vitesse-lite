@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { shareDocument } = useDocument()
+import { useToast } from '~/composables/useToast'
+
+const { toastSuccess } = useToast()
 
 const details = ref({
   name: '',
@@ -23,7 +25,10 @@ useStorage('details', details)
           class="w-[90%] outline-none"
           :placeholder="details.name ? '' : 'Введите имя'"
         >
-        <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
+        <div
+          class="i-mdi:content-copy ml-auto bg-kaspiText"
+          @click="toastSuccess('Успешно')"
+        />
       </div>
     </div>
     <div class="detailsBlock">
@@ -35,7 +40,10 @@ useStorage('details', details)
           class="outline-none"
           :placeholder="details.iin ? '' : 'Введите ИИН'"
         >
-        <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
+        <div
+          class="i-mdi:content-copy ml-auto bg-kaspiText"
+          @click="toastSuccess('Успешно')"
+        />
       </div>
     </div>
     <div class="detailsBlock">
@@ -47,7 +55,10 @@ useStorage('details', details)
           class="outline-none"
           :placeholder="details.date ? '' : 'Введите дату рождения'"
         >
-        <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
+        <div
+          class="i-mdi:content-copy ml-auto bg-kaspiText"
+          @click="toastSuccess('Успешно')"
+        />
       </div>
     </div>
     <div class="detailsBlock">
@@ -59,7 +70,10 @@ useStorage('details', details)
           class="w-[90%] outline-none"
           :placeholder="details.documentNumber ? '' : 'Введите номер документа'"
         >
-        <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
+        <div
+          class="i-mdi:content-copy ml-auto bg-kaspiText"
+          @click="toastSuccess('Успешно')"
+        />
       </div>
     </div>
     <div class="detailsBlock">
@@ -71,7 +85,10 @@ useStorage('details', details)
           class="outline-none"
           :placeholder="details.dayRecieve ? '' : 'Введите дату выдачи'"
         >
-        <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
+        <div
+          class="i-mdi:content-copy ml-auto bg-kaspiText"
+          @click="toastSuccess('Успешно')"
+        />
       </div>
     </div>
     <div class="detailsBlock">
@@ -83,17 +100,11 @@ useStorage('details', details)
           class="outline-none"
           :placeholder="details.expiring ? '' : 'Введите срок действия'"
         >
-        <div class="i-mdi:content-copy ml-auto bg-kaspiText" />
+        <div
+          class="i-mdi:content-copy ml-auto bg-kaspiText"
+          @click="toastSuccess('Успешно')"
+        />
       </div>
-    </div>
-  </div>
-  <div class="fixed bottom-5 w-full p-5 text-lg">
-    <div
-      class="flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
-      @click="shareDocument"
-    >
-      <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
-      <button>Отправить реквизиты</button>
     </div>
   </div>
 </template>
