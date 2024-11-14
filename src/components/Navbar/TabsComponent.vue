@@ -11,7 +11,7 @@ const emit = defineEmits<{
 
 const btnLeft = computed(() => {
   return props.state.x.value > window.innerWidth / 2
-    ? (window.innerWidth / 2) - 18
+    ? window.innerWidth / 2 - 18
     : props.state.x.value
 })
 

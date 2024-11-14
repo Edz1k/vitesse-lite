@@ -11,7 +11,7 @@ function changeModel() {
 <template>
   <div
     v-if="modelValue"
-    class="fixed inset-0 left-0 top-0 z-5 w-full bg-black bg-opacity-50"
+    class="fixed inset-0 left-0 top-0 z-50 w-full bg-black bg-opacity-50"
     @click="changeModel"
   >
     <div
