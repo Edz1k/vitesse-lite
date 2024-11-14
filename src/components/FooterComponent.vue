@@ -27,12 +27,23 @@ function changeModel() {
         <div class="i-mdi-qrcode-scan" mr-2 text-xl />
         <button>Предъявить документ</button>
       </div>
-      <div
-        class="mt-5 flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
-        @click="shareDocument"
-      >
-        <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
-        <button>Отправить документ</button>
+
+      <div class="mt-5 flex items-center">
+        <div
+          class="min-w-full flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
+          @click="shareDocument"
+        >
+          <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
+          <button>Отправить документ</button>
+        </div>
+
+        <div
+          class="ml-10 min-w-full flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
+          @click="shareDocument"
+        >
+          <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
+          <button>Отправить реквизиты</button>
+        </div>
       </div>
     </div>
 
