@@ -27,7 +27,10 @@ function handleInput() {
         @change="handleInput"
       >
     </div>
-    <div v-if="photo" class="h-[65svh] flex touch-auto items-start overflow-auto">
+    <div
+      v-if="photo"
+      class="h-[65svh] flex touch-auto items-start justify-center overflow-auto"
+    >
       <img :src="photo" class="scale-90 transform -mt-5" alt="">
     </div>
   </div>
