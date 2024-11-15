@@ -27,8 +27,6 @@ export default defineConfig({
         short_name: 'Kaspi.kz',
         start_url: '/',
         display: 'fullscreen',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
         icons: [
           {
             src: '/assets/favicon/web-app-manifest-512x512.png',
