@@ -1,7 +1,7 @@
-export function useToast() {
-  const message = ref('')
-  const visible = ref(false)
+const message = ref('')
+const visible = ref(false)
 
+export function useToast() {
   const toastSuccess = (_message: string, _duration: number = 3000) => {
     message.value = _message
     visible.value = true
