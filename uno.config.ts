@@ -34,6 +34,7 @@ export default defineConfig({
     'i-mdi:account-credit-card-outline',
     'i-mdi:passport',
     'i-mdi:car-side',
+    'i-mdi:file-document',
   ],
   presets: [
     presetUno(),

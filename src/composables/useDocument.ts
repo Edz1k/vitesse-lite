@@ -34,7 +34,7 @@ const documentList = useStorage('documentList', [
   {
     id: 5,
     name: 'Справки',
-    icon: 'i-mdi:car-side',
+    icon: 'i-mdi:file-document',
     route: '/document/driverlc',
     visible: true,
     description: 'Социальные, по недвижимости и медицинские',
