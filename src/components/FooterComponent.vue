@@ -46,8 +46,8 @@ function changeModel() {
         </div>
       </div>
     </div>
-    <teleport to="body">
-      <div v-if="loading" class="fixed inset-0 z-50 bg-black bg-opacity-50">
+    <teleport to="main">
+      <div v-if="loading" class="fixed inset-0 left-0 top-0 z-50 w-full bg-black bg-opacity-50">
         <div
           class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
