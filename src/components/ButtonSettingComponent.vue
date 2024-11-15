@@ -27,19 +27,22 @@ function handleTouchEnd() {
 
 <template>
   <div
-    class="rounded text-sm outline-blue outline"
+    class="relative rounded text-sm"
     @touchstart="handleTouchStart"
     @touchend="handleTouchEnd"
   >
     <div
-      class="flex justify-center p-2 text-size-[13px] text-blue"
+      class="absolute inset-0 border-[2px] border-kaspiBlueSec rounded-lg bg-white opacity-50"
+    />
+    <div
+      class="relative flex justify-center p-3 text-size-[15px] text-kaspiBlueSec"
       @click="changeModel"
     >
       <div
         v-if="loading"
         class="i-mdi-loading animate-spin animate-duration-500 text-size-[16.5px]"
       />
-      <button v-if="!loading" @click="changeModel">
+      <button v-if="!loading" class="font-500">
         Обновить список документов
       </button>
     </div>
