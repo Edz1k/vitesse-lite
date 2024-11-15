@@ -46,18 +46,17 @@ function changeModel() {
         </div>
       </div>
     </div>
-
-    <div v-if="loading" class="fixed inset-0 z-50 bg-black bg-opacity-50">
-      <div
-        class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <div
-          class="i-mdi-loading animate-spin animate-duration-500 text-3xl text-kaspiRed"
-        />
-      </div>
-    </div>
-    <!-- minimum code -->
     <teleport to="body">
+      <div v-if="loading" class="fixed inset-0 z-50 bg-black bg-opacity-50">
+        <div
+          class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <div
+            class="i-mdi-loading animate-spin animate-duration-500 text-3xl text-kaspiRed"
+          />
+        </div>
+      </div>
+      <!-- minimum code -->
       <ModalComponent v-model="isShow" :number="randomCode()" />
     </teleport>
   </div>
