@@ -13,7 +13,7 @@ function scrollToTab(pos: number) {
   <TabsComponent :state="onScroll" @select="scrollToTab" />
   <div
     ref="el"
-    class="hidden-scrollbar flex snap-x snap-mandatory overflow-x-auto"
+    class="hidden-scrollbar h-full flex snap-x snap-mandatory overflow-x-auto"
   >
     <div class="min-w-full snap-center">
       <KaspiCard />
