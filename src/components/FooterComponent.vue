@@ -5,7 +5,7 @@ const loading = ref(false)
 const { shareDocument } = useDocument()
 
 function randomCode(): number {
-  return Math.floor(Math.random() * 1000000)
+  return Math.floor(100000 + Math.random() * 900000)
 }
 
 function changeModel() {

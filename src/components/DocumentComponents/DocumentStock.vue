@@ -3,7 +3,11 @@ const { documentListRemake } = useDocument()
 </script>
 
 <template>
-  <div v-for="item in documentListRemake" :key="item.name" class="mt-5">
+  <div
+    v-for="item in documentListRemake"
+    :key="item.name"
+    class="pb-4 pl-4 pt-3"
+  >
     <RouterLink :to="item.route">
       <div v-if="item.visible" class="flex items-center">
         <div class="li__block">

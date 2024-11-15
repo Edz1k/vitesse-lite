@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
 import { useToast } from '~/composables/useToast'
 
 const { toastSuccess } = useToast()
@@ -11,6 +12,13 @@ const details = ref({
   dayRecieve: '',
   expiring: '',
 })
+const { copy } = useClipboard()
+
+function copyField(field: string) {
+  copy(field).then(() => {
+    toastSuccess('Cкопировано!')
+  })
+}
 useStorage('details', details)
 </script>
 
@@ -27,7 +35,7 @@ useStorage('details', details)
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
-          @click="toastSuccess('Успешно')"
+          @click="copyField(details.name)"
         />
       </div>
     </div>
@@ -42,7 +50,7 @@ useStorage('details', details)
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
-          @click="toastSuccess('Успешно')"
+          @click="copyField(details.iin)"
         />
       </div>
     </div>
@@ -57,7 +65,7 @@ useStorage('details', details)
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
-          @click="toastSuccess('Успешно')"
+          @click="copyField(details.date)"
         />
       </div>
     </div>
@@ -72,7 +80,7 @@ useStorage('details', details)
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
-          @click="toastSuccess('Успешно')"
+          @click="copyField(details.documentNumber)"
         />
       </div>
     </div>
@@ -87,7 +95,7 @@ useStorage('details', details)
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
-          @click="toastSuccess('Успешно')"
+          @click="copyField(details.dayRecieve)"
         />
       </div>
     </div>
@@ -102,7 +110,7 @@ useStorage('details', details)
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
-          @click="toastSuccess('Успешно')"
+          @click="copyField(details.expiring)"
         />
       </div>
     </div>

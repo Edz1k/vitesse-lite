@@ -9,10 +9,14 @@ const emit = defineEmits<{
   (event: 'select', pos: number): void
 }>()
 
+const ulWidth = ref<HTMLElement | null>(null)
+
 const btnLeft = computed(() => {
-  return props.state.x.value > window.innerWidth / 2
-    ? window.innerWidth / 2 - 18
-    : props.state.x.value
+  if (ulWidth.value) {
+    const maxOffset = ulWidth.value.clientWidth / 2
+    return Math.min(props.state.x.value, maxOffset)
+  }
+  return 0
 })
 
 function handleSelect(pos: number) {
@@ -23,6 +27,7 @@ function handleSelect(pos: number) {
 <template>
   <div class="kaspiGrey px-4 pb-2 pt-4">
     <ul
+      ref="ulWidth"
       class="relative flex border border-2 border-kaspiGreyTabs rounded-lg bg-kaspiGreyTabs text-[15px] font-500"
     >
       <div
