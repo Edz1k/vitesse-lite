@@ -23,7 +23,8 @@ export default defineConfig({
     colors: {
       kaspiGrey: '#fafafa',
       kaspiGreyTabs: '#E7E7E7',
-      kaspiBlue: '#0b63e2',
+      kaspiBlue: '#0089D0',
+      kaspiBlueSec: '#007FFF',
       kaspiText: '#757575',
       kaspiRed: '#DF543F',
     },
@@ -33,6 +34,7 @@ export default defineConfig({
     'i-mdi:account-credit-card-outline',
     'i-mdi:passport',
     'i-mdi:car-side',
+    'i-mdi:file-document',
   ],
   presets: [
     presetUno(),

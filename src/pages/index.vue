@@ -17,7 +17,10 @@ const hold = ref(false)
       >
         <DocumentStock />
       </div>
-      <div v-if="hold">
+      <div
+        v-if="hold"
+        class="border-b border-kaspiGreyTabs rounded-2xl bg-white"
+      >
         <RedactComponent />
       </div>
       <div class="relative bottom-4 z-[-1] h-7 bg-kaspiGreyTabs" />

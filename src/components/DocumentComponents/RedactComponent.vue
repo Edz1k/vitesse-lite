@@ -3,7 +3,7 @@ const { documentList } = useDocument()
 </script>
 
 <template>
-  <div v-for="item in documentList" :key="item.name" class="mt-5">
+  <div v-for="item in documentList" :key="item.name" class="pb-4 pl-4 pt-3">
     <div class="flex items-center">
       <div class="li__block">
         <div
@@ -16,13 +16,8 @@ const { documentList } = useDocument()
           {{ item.name }}
         </h1>
       </div>
-      <div>
-        <input
-          v-model="item.visible"
-          type="checkbox"
-          class="ml-4"
-          @click.stop
-        >
+      <div class="ml-auto mr-5">
+        <input v-model="item.visible" type="checkbox" @click.stop>
       </div>
     </div>
   </div>
