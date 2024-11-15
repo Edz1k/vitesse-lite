@@ -16,7 +16,7 @@ const { copy } = useClipboard()
 
 function copyField(field: string) {
   copy(field).then(() => {
-    toastSuccess('Cкопировано!')
+    toastSuccess('Cкопировано')
   })
 }
 useStorage('details', details)
