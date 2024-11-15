@@ -15,7 +15,7 @@ function changeModel() {
     @click="changeModel"
   >
     <div
-      class="fixed bottom-0 left-0 right-0 z-10 w-full rounded-t-xl bg-white p-4 pb-15 pt-2"
+      class="fixed bottom-0 left-0 right-0 z-10 w-full rounded-t-xl bg-white p-4 pb-15 pt-2 text-center"
       @click="(event) => event.stopPropagation()"
     >
       <div class="m-auto h-[4px] w-[8%] rounded-2xl bg-kaspiGreyTabs" />

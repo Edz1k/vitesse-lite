@@ -57,6 +57,8 @@ function changeModel() {
       </div>
     </div>
     <!-- minimum code -->
-    <ModalComponent v-model="isShow" :number="randomCode()" />
+    <teleport to="body">
+      <ModalComponent v-model="isShow" :number="randomCode()" />
+    </teleport>
   </div>
 </template>
