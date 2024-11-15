@@ -26,3 +26,19 @@ html.dark {
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+.pt-4-safe {
+  padding-top: calc(env(safe-area-inset-top) + 1rem);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.pb-4-safe {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+}
