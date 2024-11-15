@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useStorage } from '@vueuse/core'
+
 const fileInput = ref()
 const photo = ref(localStorage.getItem('photo'))
 // not reactive
