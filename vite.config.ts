@@ -26,7 +26,7 @@ export default defineConfig({
         name: 'Kaspi.kz',
         short_name: 'Kaspi.kz',
         start_url: '/',
-        display: 'standalone',
+        display: 'fullscreen',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         icons: [
