@@ -9,7 +9,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     ButtonSettingComponent: typeof import('./src/components/ButtonSettingComponent.vue')['default']
     DetailsComponent: typeof import('./src/components/DetailsComponent.vue')['default']
-    DocumentListComponent: typeof import('./src/components/documentListComponent.vue')['default']
     DocumentStock: typeof import('./src/components/DocumentComponents/DocumentStock.vue')['default']
     FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     KaspiCard: typeof import('./src/components/kaspiCard.vue')['default']
