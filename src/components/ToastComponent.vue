@@ -5,7 +5,7 @@ const { message, visible } = useToast()
 </script>
 
 <template>
-  <div v-if="visible" class="fade-in-out absolute top-6 z-24 w-full p-4">
+  <div v-if="visible" class="fade-in-out absolute top-8 z-24 w-full p-4">
     <div class="flex items-center rounded-lg bg-kaspiText p-3">
       <div class="i-mdi:checkbox-marked-circle text-xl text-emerald" />
       <div class="ml-5 text-lg text-white">
