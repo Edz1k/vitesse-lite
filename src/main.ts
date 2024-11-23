@@ -22,6 +22,10 @@ Sentry.init({
 
 amplitude.init('b3bc74ae33143c2a5317d35994bdceb4', { autocapture: true })
 
+window.addEventListener('appinstalled', () => {
+  amplitude.track('PWA Installed')
+})
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
