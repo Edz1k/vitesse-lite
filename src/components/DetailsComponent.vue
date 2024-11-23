@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
+import { useOpenApi } from '~/composables/useOpenApi'
 import { useToast } from '~/composables/useToast'
 
 const { toastSuccess } = useToast()
+const { res } = useOpenApi()
 
 const details = ref({
   name: '',
@@ -12,6 +14,37 @@ const details = ref({
   dayRecieve: '',
   expiring: '',
 })
+
+function updateDetails(res: string | undefined) {
+  if (!res)
+    return
+
+  const lines = res.split('\n').map(line => line.trim())
+  details.value = {
+    name: details.value.name ? details.value.name : lines[0]?.split('. ')[1],
+    iin: details.value.iin ? details.value.iin : lines[1]?.split('. ')[1],
+    date: details.value.date ? details.value.date : lines[2]?.split('. ')[1],
+    documentNumber: details.value.documentNumber
+      ? details.value.documentNumber
+      : lines[3]?.split('. ')[1],
+    dayRecieve: details.value.dayRecieve
+      ? details.value.dayRecieve
+      : lines[4]?.split('. ')[1],
+    expiring: details.value.expiring
+      ? details.value.expiring
+      : lines[5]?.split('. ')[1],
+  }
+}
+
+watch(
+  res,
+  (newVal) => {
+    if (newVal)
+      updateDetails(newVal) // Проверяем, что newVal не undefined
+  },
+  { immediate: true },
+)
+
 const { copy } = useClipboard()
 
 function copyField(field: string) {
