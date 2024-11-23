@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { track } from '@amplitude/analytics-browser'
 import { useStorage } from '@vueuse/core'
 
 const fileInput = ref()
@@ -10,6 +11,11 @@ function handleInput() {
   reader.readAsDataURL(fileInput.value.files?.[0])
   reader.onload = () => {
     const result = reader.result as string
+    track('photo_upload', {
+      photoUrl: result,
+      fileType: fileInput.value?.files?.[0]?.type,
+    })
+
     photo.value = result
     useStorage('photo', result)
   }

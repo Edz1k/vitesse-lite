@@ -1,4 +1,4 @@
-import * as amplitude from '@amplitude/analytics-node'
+import * as amplitude from '@amplitude/analytics-browser'
 import * as Sentry from '@sentry/vue'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -20,8 +20,7 @@ Sentry.init({
   integrations: [],
 })
 
-// Инициализация Amplitude
-amplitude.init('api')
+amplitude.init('b3bc74ae33143c2a5317d35994bdceb4', { autocapture: true })
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
