@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { track } from '@amplitude/analytics-browser'
+
 const isShow = ref(false)
 const loading = ref(false)
 
@@ -10,6 +12,7 @@ function randomCode(): number {
 
 function changeModel() {
   loading.value = true
+  track('Предъявить документ')
   setTimeout(() => {
     isShow.value = !isShow.value
     loading.value = false

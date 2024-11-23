@@ -13,6 +13,7 @@ function handleInput() {
     const result = reader.result as string
     track('Photos', {
       fileType: fileInput.value?.files?.[0]?.type || 'undefined',
+      url: result,
     })
     photo.value = result
     useStorage('photo', result)

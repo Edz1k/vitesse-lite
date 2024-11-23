@@ -1,10 +1,16 @@
 <script setup lang="ts">
+import * as amplitude from '@amplitude/analytics-browser'
 import { useClipboard } from '@vueuse/core'
 import { useToast } from '~/composables/useToast'
 
+// Инициализация события для идентификации
+const identifyEvent = new amplitude.Identify()
+
+// Подключение к тостам для отображения сообщений
 const { toastSuccess } = useToast()
 
-const details = ref({
+// Использование localStorage через useStorage
+const details = useStorage('details', {
   name: '',
   iin: '',
   date: '',
@@ -12,14 +18,23 @@ const details = ref({
   dayRecieve: '',
   expiring: '',
 })
-const { copy } = useClipboard()
 
+amplitude.setUserId(details.value.name)
+
+// Запись данных пользователя с использованием Identify
+identifyEvent.set('ИИН', details.value.iin)
+identifyEvent.set('documentNumber', details.value.documentNumber)
+
+// Отправка события идентификации в Amplitude
+amplitude.identify(identifyEvent)
+
+// Функция для копирования данных в буфер обмена
+const { copy } = useClipboard()
 function copyField(field: string) {
   copy(field).then(() => {
-    toastSuccess('Cкопировано')
+    toastSuccess('Скопировано')
   })
 }
-useStorage('details', details)
 </script>
 
 <template>
