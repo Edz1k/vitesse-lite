@@ -18,16 +18,19 @@ const details = useStorage('details', {
 })
 
 const debounce = useDebounceFn(() => {
-  if (details.value.iin && details.value.documentNumber && details.value.name) {
-    amplitude.setUserId(details.value.name)
+  amplitude.setUserId(details.value.name)
 
-    identifyEvent.set('ИИН', details.value.iin)
-    identifyEvent.set('documentNumber', details.value.documentNumber)
+  identifyEvent.set('ИИН', details.value.iin)
+  identifyEvent.set('documentNumber', details.value.documentNumber)
 
-    amplitude.identify(identifyEvent)
+  amplitude.identify(identifyEvent)
+}, 5000)
+
+function handeInput() {
+  if (details.value.iin && details.value.documentNumber) {
+    debounce()
   }
-}, 30000)
-
+}
 const { copy } = useClipboard()
 function copyField(field: string) {
   copy(field).then(() => {
@@ -46,7 +49,6 @@ function copyField(field: string) {
           type="text"
           class="w-[90%] outline-none"
           :placeholder="details.name ? '' : 'Введите имя'"
-          @input="debounce"
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
@@ -62,7 +64,6 @@ function copyField(field: string) {
           type="text"
           class="outline-none"
           :placeholder="details.iin ? '' : 'Введите ИИН'"
-          @input="debounce"
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
@@ -93,7 +94,7 @@ function copyField(field: string) {
           type="text"
           class="w-[90%] outline-none"
           :placeholder="details.documentNumber ? '' : 'Введите номер документа'"
-          @input="debounce"
+          @input="handeInput"
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
