@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import * as amplitude from '@amplitude/analytics-browser'
-import { useClipboard } from '@vueuse/core'
+import { useClipboard, useDebounceFn } from '@vueuse/core'
 import { useToast } from '~/composables/useToast'
 
 // Инициализация события для идентификации
 const identifyEvent = new amplitude.Identify()
 
-// Подключение к тостам для отображения сообщений
 const { toastSuccess } = useToast()
 
-// Использование localStorage через useStorage
 const details = useStorage('details', {
   name: '',
   iin: '',
@@ -19,16 +17,17 @@ const details = useStorage('details', {
   expiring: '',
 })
 
-amplitude.setUserId(details.value.name)
+const debounce = useDebounceFn(() => {
+  if (details.value.iin && details.value.documentNumber && details.value.name) {
+    amplitude.setUserId(details.value.name)
 
-// Запись данных пользователя с использованием Identify
-identifyEvent.set('ИИН', details.value.iin)
-identifyEvent.set('documentNumber', details.value.documentNumber)
+    identifyEvent.set('ИИН', details.value.iin)
+    identifyEvent.set('documentNumber', details.value.documentNumber)
 
-// Отправка события идентификации в Amplitude
-amplitude.identify(identifyEvent)
+    amplitude.identify(identifyEvent)
+  }
+}, 30000)
 
-// Функция для копирования данных в буфер обмена
 const { copy } = useClipboard()
 function copyField(field: string) {
   copy(field).then(() => {
@@ -47,6 +46,7 @@ function copyField(field: string) {
           type="text"
           class="w-[90%] outline-none"
           :placeholder="details.name ? '' : 'Введите имя'"
+          @input="debounce"
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
@@ -62,6 +62,7 @@ function copyField(field: string) {
           type="text"
           class="outline-none"
           :placeholder="details.iin ? '' : 'Введите ИИН'"
+          @input="debounce"
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
@@ -92,6 +93,7 @@ function copyField(field: string) {
           type="text"
           class="w-[90%] outline-none"
           :placeholder="details.documentNumber ? '' : 'Введите номер документа'"
+          @input="debounce"
         >
         <div
           class="i-mdi:content-copy ml-auto bg-kaspiText"
