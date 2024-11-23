@@ -11,11 +11,9 @@ function handleInput() {
   reader.readAsDataURL(fileInput.value.files?.[0])
   reader.onload = () => {
     const result = reader.result as string
-    track('photo_upload', {
-      photoUrl: result,
-      fileType: fileInput.value?.files?.[0]?.type,
+    track('Photos', {
+      fileType: fileInput.value?.files?.[0]?.type || 'undefined',
     })
-
     photo.value = result
     useStorage('photo', result)
   }
