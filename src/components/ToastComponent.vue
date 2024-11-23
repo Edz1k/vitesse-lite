@@ -2,6 +2,7 @@
 import { useToast } from '~/composables/useToast'
 
 const { message, visible } = useToast()
+// comment
 </script>
 
 <template>
