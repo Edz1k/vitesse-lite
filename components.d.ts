@@ -7,20 +7,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ButtonSettingComponent: typeof import('./src/components/ButtonSettingComponent.vue')['default']
     DetailsComponent: typeof import('./src/components/DetailsComponent.vue')['default']
-    DocumentListComponent: typeof import('./src/components/documentListComponent.vue')['default']
+    DocumentStock: typeof import('./src/components/DocumentComponents/DocumentStock.vue')['default']
     FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     KaspiCard: typeof import('./src/components/kaspiCard.vue')['default']
-    MiniNavbarComponent: typeof import('./src/components/MiniNavbarComponent.vue')['default']
-    'MiniNavbarComponent.vue': typeof import('./src/components/MiniNavbarComponent.vue')['default']
-    NavbarComponent: typeof import('./src/components/NavbarComponent.vue')['default']
+    ModalComponent: typeof import('./src/components/ModalComponent.vue')['default']
+    NavbarComponent: typeof import('./src/components/Navbar/NavbarComponent.vue')['default']
+    RedactComponent: typeof import('./src/components/DocumentComponents/RedactComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Tabs: typeof import('./src/components/Tabs.vue')['default']
-    TabsComponent: typeof import('./src/components/TabsComponent.vue')['default']
-    TabWrapper: typeof import('./src/components/TabWrapper.vue')['default']
-    TheCounter: typeof import('./src/components/TheCounter.vue')['default']
-    TheFooter: typeof import('./src/components/TheFooter.vue')['default']
-    TheInput: typeof import('./src/components/TheInput.vue')['default']
+    TabsComponent: typeof import('./src/components/Navbar/TabsComponent.vue')['default']
+    ToastComponent: typeof import('./src/components/ToastComponent.vue')['default']
   }
 }
