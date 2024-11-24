@@ -20,61 +20,68 @@ export default defineConfig({
     },
   },
 
-  plugins: [vueDevTools(), VitePWA({
-    registerType: 'autoUpdate',
-    manifest: {
-      name: 'Kaspi.kz',
-      short_name: 'Kaspi.kz',
-      start_url: '/',
-      display: 'fullscreen',
-      icons: [
+  plugins: [
+    vueDevTools(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'Kaspi.kz',
+        short_name: 'Kaspi.kz',
+        start_url: '/',
+        display: 'fullscreen',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/assets/favicon/web-app-manifest-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/assets/favicon/web-app-manifest-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
+    VueMacros({
+      defineOptions: false,
+      defineModels: false,
+      plugins: {
+        vue: Vue({
+          script: {
+            propsDestructure: true,
+            defineModel: true,
+          },
+        }),
+      },
+    }), // https://github.com/posva/unplugin-vue-router
+    VueRouter(), // https://github.com/antfu/unplugin-auto-import
+    AutoImport({
+      imports: [
+        'vue',
+        '@vueuse/core',
+        VueRouterAutoImports,
         {
-          src: '/assets/favicon/web-app-manifest-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-        },
-        {
-          src: '/assets/favicon/web-app-manifest-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
+          // add any other imports you were relying on
+          'vue-router/auto': ['useLink'],
         },
       ],
-    },
-  }), VueMacros({
-    defineOptions: false,
-    defineModels: false,
-    plugins: {
-      vue: Vue({
-        script: {
-          propsDestructure: true,
-          defineModel: true,
-        },
-      }),
-    },
-  }), // https://github.com/posva/unplugin-vue-router
-  VueRouter(), // https://github.com/antfu/unplugin-auto-import
-  AutoImport({
-    imports: [
-      'vue',
-      '@vueuse/core',
-      VueRouterAutoImports,
-      {
-        // add any other imports you were relying on
-        'vue-router/auto': ['useLink'],
-      },
-    ],
-    dts: true,
-    dirs: ['./src/composables'],
-    vueTemplate: true,
-  }), // https://github.com/antfu/vite-plugin-components
-  Components({
-    dts: true,
-  }), // https://github.com/antfu/unocss
-  // see uno.config.ts for config
-  UnoCSS(), sentryVitePlugin({
-    org: 'eduard-e5',
-    project: 'javascript-vue',
-  })],
+      dts: true,
+      dirs: ['./src/composables'],
+      vueTemplate: true,
+    }), // https://github.com/antfu/vite-plugin-components
+    Components({
+      dts: true,
+    }), // https://github.com/antfu/unocss
+    // see uno.config.ts for config
+    UnoCSS(),
+    sentryVitePlugin({
+      org: 'eduard-e5',
+      project: 'javascript-vue',
+    }),
+  ],
 
   // https://github.com/vitest-dev/vitest
   test: {
