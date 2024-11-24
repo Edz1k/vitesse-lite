@@ -21,7 +21,7 @@ function changeModel() {
 </script>
 
 <template>
-  <div class="relative bottom-5 z-10 border-t bg-white p-5 text-lg">
+  <div class="relative bottom-1 z-10 border-t bg-white p-5 text-lg">
     <div>
       <div
         class="flex items-center justify-center rounded-xl bg-kaspiBlue p-3 text-white"
