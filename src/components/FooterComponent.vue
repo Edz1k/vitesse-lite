@@ -41,7 +41,7 @@ function changeModel() {
         </div>
 
         <div
-          class="ml-10 min-w-full flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
+          class="ml-8 min-w-full flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
           @click="shareDocument"
         >
           <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
