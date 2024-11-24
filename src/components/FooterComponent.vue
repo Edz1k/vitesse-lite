@@ -21,7 +21,7 @@ function changeModel() {
 </script>
 
 <template>
-  <div class="relative bottom-1 z-10 border-t bg-white p-5 text-lg">
+  <div class="relative z-10 border-t bg-white p-4 text-lg">
     <div>
       <div
         class="flex items-center justify-center rounded-xl bg-kaspiBlue p-3 text-white"
@@ -31,7 +31,7 @@ function changeModel() {
         <button>Предъявить документ</button>
       </div>
 
-      <div class="mt-5 flex items-center">
+      <div class="mt-3 flex items-center">
         <div
           class="min-w-full flex items-center justify-center border border-blue rounded-xl p-3 text-kaspiBlue"
           @click="shareDocument"
