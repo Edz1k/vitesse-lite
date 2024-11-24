@@ -8,6 +8,7 @@ const lst: Record<string, string> = {
   '/document/passport': 'Пасспорт',
   '/document/driverlc': 'Водительское удостоверение',
   '/document/studentid': 'Студенческий билет',
+  '/document/reference': 'Справки',
 }
 </script>
 

@@ -23,6 +23,7 @@ declare module 'vue-router/auto-routes' {
     '/document/driverlc': RouteRecordInfo<'/document/driverlc', '/document/driverlc', Record<never, never>, Record<never, never>>,
     '/document/id': RouteRecordInfo<'/document/id', '/document/id', Record<never, never>, Record<never, never>>,
     '/document/passport': RouteRecordInfo<'/document/passport', '/document/passport', Record<never, never>, Record<never, never>>,
+    '/document/reference': RouteRecordInfo<'/document/reference', '/document/reference', Record<never, never>, Record<never, never>>,
     '/document/studentid': RouteRecordInfo<'/document/studentid', '/document/studentid', Record<never, never>, Record<never, never>>,
   }
 }

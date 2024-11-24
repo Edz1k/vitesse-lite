@@ -2,7 +2,7 @@ const documentList = useStorage('documentList', [
   {
     id: 1,
     name: 'Удостоверение личности',
-    icon: 'i-mdi:id-card',
+    icon: 'i-mage-id-card',
     route: '/document/id',
     visible: true,
     description: '',
@@ -35,7 +35,7 @@ const documentList = useStorage('documentList', [
     id: 5,
     name: 'Справки',
     icon: 'i-mdi:file-document',
-    route: '/document/driverlc',
+    route: '/document/reference',
     visible: true,
     description: 'Социальные, по недвижимости и медицинские',
   },

@@ -45,6 +45,9 @@ importers:
       '@iconify-json/iconamoon':
         specifier: ^1.2.1
         version: 1.2.1
+      '@iconify-json/mage':
+        specifier: ^1.2.1
+        version: 1.2.1
       '@iconify-json/mdi':
         specifier: ^1.2.1
         version: 1.2.1
@@ -1153,6 +1156,9 @@ packages:
 
   '@iconify-json/iconamoon@1.2.1':
     resolution: {integrity: sha512-r9uuB2kfeLpi3T74fMnoQxfmKiALQ7mW0MoktDLBt70XtDmxGptf5boOmVdXgYQorNOVqEbjyvBEJRu+HR+g6w==}
+
+  '@iconify-json/mage@1.2.1':
+    resolution: {integrity: sha512-uMP07KFQNJ3iSl6dgGVkF9pDyLAKgxCVnNqm4metLI58HBhZ+pnGy3FfO0Wd2xlaipZYwjcO6C/V8kdYpTSrPA==}
 
   '@iconify-json/mdi@1.2.1':
     resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
@@ -5917,6 +5923,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/iconamoon@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mage@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 

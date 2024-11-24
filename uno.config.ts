@@ -35,6 +35,7 @@ export default defineConfig({
     'i-mdi:passport',
     'i-mdi:car-side',
     'i-mdi:file-document',
+    'i-mage-id-card',
   ],
   presets: [
     presetUno(),

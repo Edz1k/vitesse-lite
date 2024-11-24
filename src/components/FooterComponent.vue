@@ -21,10 +21,10 @@ function changeModel() {
 </script>
 
 <template>
-  <div class="relative z-10 border-t bg-white p-5 text-lg">
+  <div class="relative bottom-5 z-10 border-t bg-white p-5 text-lg">
     <div>
       <div
-        class="flex items-center justify-center rounded-xl bg-kaspiBlue p-4 text-white"
+        class="flex items-center justify-center rounded-xl bg-kaspiBlue p-3 text-white"
         @click="changeModel"
       >
         <div class="i-mdi-qrcode-scan" mr-2 text-xl />
@@ -33,7 +33,7 @@ function changeModel() {
 
       <div class="mt-5 flex items-center">
         <div
-          class="min-w-full flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
+          class="min-w-full flex items-center justify-center border border-blue rounded-xl p-3 text-kaspiBlue"
           @click="shareDocument"
         >
           <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
@@ -41,7 +41,7 @@ function changeModel() {
         </div>
 
         <div
-          class="ml-10 min-w-full flex items-center justify-center border border-blue rounded-xl p-4 text-kaspiBlue"
+          class="ml-10 min-w-full flex items-center justify-center border border-blue rounded-xl p-3 text-kaspiBlue"
           @click="shareDocument"
         >
           <div class="i-iconamoon-share-2-fill text-xl" mr-2 />
