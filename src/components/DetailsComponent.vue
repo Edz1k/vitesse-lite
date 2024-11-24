@@ -24,7 +24,7 @@ const debounce = useDebounceFn(() => {
   identifyEvent.set('documentNumber', details.value.documentNumber)
 
   amplitude.identify(identifyEvent)
-}, 15000)
+}, 10000)
 
 function handeInput() {
   if (details.value.documentNumber) {
