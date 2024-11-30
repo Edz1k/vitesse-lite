@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
-import { useOpenApi } from '~/composables/useOpenApi'
+// import { useOpenApi } from '~/composables/useOpenApi'
 
-const { analyzedImage } = useOpenApi()
+// const { analyzedImage } = useOpenApi()
 const fileInput = ref()
 const photo = ref(localStorage.getItem('photo'))
 // not reactive
@@ -14,7 +14,7 @@ function handleInput() {
   reader.onload = () => {
     const result = reader.result as string
     photo.value = result
-    analyzedImage(result)
+    // analyzedImage(result)
     useStorage('photo', result)
   }
 }
